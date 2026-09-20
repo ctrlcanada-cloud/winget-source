@@ -1,0 +1,56 @@
+name: Build WinGet Index Tool
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout personal source
+        uses: actions/checkout@v4
+
+      - name: Checkout winget-cli
+        uses: actions/checkout@v4
+        with:
+          repository: microsoft/winget-cli
+          path: winget-cli
+          submodules: recursive
+
+      - name: Set up .NET 8
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 8.0.x
+
+      - name: Set up MSBuild
+        uses: microsoft/setup-msbuild@v2
+
+      - name: Set up NuGet
+        uses: NuGet/setup-nuget@v2
+
+      - name: Restore dependencies
+        shell: pwsh
+        run: |
+          nuget restore "$env:GITHUB_WORKSPACE\winget-cli\src\AppInstallerCLI.sln" -NonInteractive
+          dotnet restore "$env:GITHUB_WORKSPACE\winget-cli\src\IndexCreationTool\IndexCreationTool.csproj"
+          if ($env:VCPKG_INSTALLATION_ROOT) {
+            & "$env:VCPKG_INSTALLATION_ROOT\vcpkg.exe" integrate install
+          }
+
+      - name: Build IndexCreationTool
+        shell: pwsh
+        run: |
+          $solutionDir = "$env:GITHUB_WORKSPACE\winget-cli\src\"
+          msbuild "$solutionDir\IndexCreationTool\IndexCreationTool.csproj" `
+            /m `
+            /p:Configuration=Release `
+            /p:Platform=x64 `
+            /p:SolutionDir="$solutionDir"
+
+      - name: Upload IndexCreationTool
+        uses: actions/upload-artifact@v4
+        with:
+          name: IndexCreationTool-x64
+          path: winget-cli/src/x64/Release/IndexCreationTool/
+          if-no-files-found: error
