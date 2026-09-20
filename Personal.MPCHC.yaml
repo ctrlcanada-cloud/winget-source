@@ -1,0 +1,25 @@
+# yaml-language-server: $schema=https://aka.ms/winget-manifest.singleton.1.12.0.schema.json
+PackageIdentifier: Personal.MPCHC
+PackageVersion: 2.8.2
+PackageLocale: en-US
+Publisher: MPC-HC Team
+PublisherUrl: https://github.com/clsid2/mpc-hc
+PublisherSupportUrl: https://github.com/clsid2/mpc-hc/issues
+PackageName: MPC-HC
+PackageUrl: https://github.com/clsid2/mpc-hc
+License: GPL-3.0
+LicenseUrl: https://github.com/clsid2/mpc-hc/blob/HEAD/COPYING.txt
+ShortDescription: Free and open-source video and audio player for Windows.
+InstallerType: inno
+Scope: machine
+UpgradeBehavior: install
+ReleaseDate: 2026-09-17
+Installers:
+- Architecture: x64
+  InstallerUrl: https://github.com/clsid2/mpc-hc/releases/download/2.8.2/MPC-HC.2.8.2.x64.exe
+  InstallerSha256: 4A39FF780905C533F43B7E5684672A50345369B54E895E2CA6B7039194490D12
+  ProductCode: '{2ACBF1FA-F5C3-4B19-A774-B22A31F231B9}_is1'
+  AppsAndFeaturesEntries:
+  - ProductCode: '{2ACBF1FA-F5C3-4B19-A774-B22A31F231B9}_is1'
+ManifestType: singleton
+ManifestVersion: 1.12.0

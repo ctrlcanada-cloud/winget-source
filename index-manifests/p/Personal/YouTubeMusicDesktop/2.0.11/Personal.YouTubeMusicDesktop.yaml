@@ -1,0 +1,24 @@
+# yaml-language-server: $schema=https://aka.ms/winget-manifest.singleton.1.12.0.schema.json
+PackageIdentifier: Personal.YouTubeMusicDesktop
+PackageVersion: 2.0.11
+PackageLocale: en-US
+Publisher: NovusTheory
+PublisherUrl: https://github.com/ytmdesktop/
+PublisherSupportUrl: https://github.com/ytmdesktop/ytmdesktop/issues
+PackageName: YouTube Music Desktop App
+PackageUrl: https://ytmdesktop.app/
+License: GPL-3.0
+LicenseUrl: https://raw.githubusercontent.com/ytmdesktop/ytmdesktop/v2.0.11/LICENSE
+ShortDescription: Unofficial YouTube Music desktop player with additional desktop features.
+MinimumOSVersion: 10.0.0.0
+InstallerType: exe
+InstallerSwitches:
+  Silent: "yes"
+  SilentWithProgress: "yes"
+ReleaseDate: 2026-02-12
+Installers:
+- Architecture: x64
+  InstallerUrl: https://github.com/ytmdesktop/ytmdesktop/releases/download/v2.0.11/YouTube.Music.Desktop.App-2.0.11.Setup.exe
+  InstallerSha256: 2AE04DB2E1B95BFEEED5E2FFBFD58CE1D5EB3B35711C8D92A8547A09D53C671D
+ManifestType: singleton
+ManifestVersion: 1.12.0
