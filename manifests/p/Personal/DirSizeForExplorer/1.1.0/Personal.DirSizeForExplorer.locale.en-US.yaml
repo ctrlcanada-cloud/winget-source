@@ -1,0 +1,12 @@
+# Created using wingetcreate 1.12.13.0
+# yaml-language-server: $schema=https://aka.ms/winget-manifest.defaultLocale.1.12.0.schema.json
+
+PackageIdentifier: Personal.DirSizeForExplorer
+PackageVersion: 1.1.0
+PackageLocale: en-US
+Publisher: DirSize Project
+PackageName: DirSize for Explorer
+License: MIT
+ShortDescription: Displays folder sizes in the Windows File Explorer Size column.
+ManifestType: defaultLocale
+ManifestVersion: 1.12.0
