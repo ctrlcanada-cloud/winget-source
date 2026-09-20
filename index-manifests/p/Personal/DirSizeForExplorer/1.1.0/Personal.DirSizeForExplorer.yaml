@@ -1,0 +1,17 @@
+﻿# yaml-language-server: $schema=https://aka.ms/winget-manifest.singleton.1.12.0.schema.json
+
+PackageIdentifier: Personal.DirSizeForExplorer
+PackageVersion: 1.1.0
+PackageLocale: en-US
+Publisher: DirSize Project
+PackageName: DirSize for Explorer
+License: MIT
+ShortDescription: Displays folder sizes in the Windows File Explorer Size column.
+InstallerType: wix
+ProductCode: '{13CB57F6-7B4D-4F14-8410-52E0FF360D46}'
+Installers:
+- Architecture: x64
+  InstallerUrl: https://github.com/ducky0518/dir-size-for-explorer/releases/download/v1.1.0/DirSizeForExplorer.msi
+  InstallerSha256: 165D930786F1ABEA3C20453C5B26F7B7C790884174A89454ACF439203E7383C5
+ManifestType: singleton
+ManifestVersion: 1.12.0
