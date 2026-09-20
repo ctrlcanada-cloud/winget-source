@@ -1,0 +1,33 @@
+# yaml-language-server: $schema=https://aka.ms/winget-manifest.singleton.1.12.0.schema.json
+PackageIdentifier: Personal.PowerToys
+PackageVersion: 0.101.2362.0
+PackageLocale: en-US
+Publisher: Microsoft Corporation
+PublisherUrl: https://github.com/microsoft/PowerToys
+PublisherSupportUrl: https://github.com/microsoft/PowerToys/issues
+PrivacyUrl: https://privacy.microsoft.com/en-us/privacystatement
+Author: Microsoft Corporation
+PackageName: PowerToys
+PackageUrl: https://github.com/microsoft/PowerToys
+License: MIT
+LicenseUrl: https://github.com/microsoft/PowerToys/blob/HEAD/LICENSE
+Copyright: Copyright (c) Microsoft Corporation. All rights reserved.
+ShortDescription: Microsoft PowerToys is a set of utilities for power users to tune and streamline their Windows experience for greater productivity.
+Moniker: powertoys
+Platform:
+- Windows.Desktop
+MinimumOSVersion: 10.0.17134.0
+InstallerType: burn
+InstallerSwitches:
+  Silent: /quiet /norestart
+  SilentWithProgress: /quiet /norestart
+UpgradeBehavior: install
+ReleaseDate: 2026-08-25
+Installers:
+- Architecture: x64
+  Scope: machine
+  InstallerUrl: https://github.com/microsoft/PowerToys/releases/download/v0.101.2362.0/PowerToysSetup-0.101.2362.0-x64.exe
+  InstallerSha256: F27E4B4B01BFF1A74BFA0116C99F9205F7138DB6F7DFCAA9223FB8B635FE6050
+  ElevationRequirement: elevatesSelf
+ManifestType: singleton
+ManifestVersion: 1.12.0

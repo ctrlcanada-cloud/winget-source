@@ -1,0 +1,34 @@
+# yaml-language-server: $schema=https://aka.ms/winget-manifest.singleton.1.12.0.schema.json
+PackageIdentifier: Personal.LocalSend
+PackageVersion: 1.18.2
+PackageLocale: en-US
+Publisher: Tien Do Nam
+PublisherUrl: https://tienisto.com/
+PublisherSupportUrl: https://localsend.org/
+Author: Tien Do Nam
+PackageName: LocalSend
+PackageUrl: https://localsend.org/
+License: Apache-2.0
+LicenseUrl: https://github.com/localsend/localsend/blob/HEAD/LICENSE
+Copyright: Copyright (c) 2022-2024 Tien Do Nam
+ShortDescription: Share files to nearby devices. Free, open source, cross-platform.
+InstallerLocale: en-US
+InstallerType: inno
+UpgradeBehavior: install
+ProductCode: '{00809252-FEC6-448E-83B4-E7F55AE7E47D}_is1'
+ReleaseDate: 2026-08-24
+AppsAndFeaturesEntries:
+- ProductCode: '{00809252-FEC6-448E-83B4-E7F55AE7E47D}_is1'
+Installers:
+- Architecture: x64
+  Scope: machine
+  ElevationRequirement: elevatesSelf
+  InstallerUrl: https://github.com/localsend/localsend/releases/download/v1.18.2/LocalSend-1.18.2-windows-x86-64-unsigned.exe
+  InstallerSha256: F53856750AD087A17B996309171262FA7D89071C350E0DC5DF6530F34DD8A2AE
+  InstallerSwitches:
+    Custom: /ALLUSERS
+    Upgrade: /FORCECLOSEAPPLICATIONS
+  InstallationMetadata:
+    DefaultInstallLocation: '%ProgramFiles%\LocalSend'
+ManifestType: singleton
+ManifestVersion: 1.12.0
